@@ -1,8 +1,12 @@
 name: Release Charts
 on:
-  push:
+  workflow_run:
+    workflows:
+    - tag
     branches:
     - main
+    types:
+    - completed
 jobs:
   release:
     # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
