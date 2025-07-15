@@ -1,4 +1,4 @@
-name: Release Charts
+name: release
 on:
   workflow_run:
     workflows:
@@ -9,8 +9,8 @@ on:
     - completed
 jobs:
   release:
-    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
-    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    name: Releases Helm Charts
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: write
     runs-on: ubuntu-latest

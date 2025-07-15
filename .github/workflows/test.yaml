@@ -1,0 +1,19 @@
+name: test
+on:
+  push:
+    branches:
+    - main
+    - dev
+  pull_request:
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: azure/setup-helm@v4.3.0
+      with:
+        version: v3.18.3
+      id: install
+    - name: Validation
+      run: find charts -type d -maxdepth 1 -mindepth 1 | xargs -I {} helm lint {}
