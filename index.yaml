@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kafka-connector-watchdog:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-07-15T07:55:23.868823634Z"
+    description: A Helm chart for Kubernetes
+    digest: 60a3e89a169954c460b0a1d0117591d1a29ea7f310625b20c7387aa86e9f75c1
+    name: kafka-connector-watchdog
+    type: application
+    urls:
+    - https://github.com/Segence/helm-chart-repository/releases/download/kafka-connector-watchdog-0.1.1/kafka-connector-watchdog-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-07-15T07:55:23.868828643Z"
