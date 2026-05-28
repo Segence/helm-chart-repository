@@ -1,12 +1,7 @@
 name: publish
 on:
-  workflow_run:
-    workflows:
-    - tag
-    branches:
-    - main
-    types:
-    - completed
+  release:
+    types: [published]
 jobs:
   release:
     name: Releases Helm Charts
