@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v0.7.0 - 2026-05-28
+#### Features
+- no condition - (93a5231) - R Vadai
+- publish - (ae73b23) - R Vadai
+- kafka msg scheduler (#4) - (58a43ba) - Rob Vadai
+#### Bug Fixes
+- renamed (#5) - (11f6e4d) - Rob Vadai
+#### Miscellaneous Chores
+- (**version**) v0.7.1 [skip ci] - (d1cce05) - github-action
+- (**version**) v0.7.0 [skip ci] - (7e4643c) - github-action
+
+- - -
+
 ## v0.7.1 - 2026-05-28
 #### Bug Fixes
 - renamed (#5) - (11f6e4d) - Rob Vadai
