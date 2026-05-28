@@ -1,0 +1,17 @@
+{{- if .Values.configuration }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "kafka-message-scheduler.fullname" . }}-configuration-file
+  labels:
+    app: {{ template "kafka-message-scheduler.name" . }}
+    chart: {{ template "kafka-message-scheduler.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    {{- with .Values.additionalLabels }}
+{{ toYaml . | indent 4 }}
+    {{- end }}
+data:
+  kafka-message-scheduler.yaml: |
+{{ .Values.configuration | toYaml | indent 4 }}
+{{- end }}
