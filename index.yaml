@@ -31,4 +31,15 @@ entries:
     urls:
     - https://github.com/Segence/helm-chart-repository/releases/download/kafka-connector-watchdog-0.1.1/kafka-connector-watchdog-0.1.1.tgz
     version: 0.1.1
-generated: "2025-07-15T13:12:28.143356435Z"
+  kafka-message-scheduler:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-05-28T11:35:21.818345038Z"
+    description: A Helm chart for Kubernetes
+    digest: a4b73b0f475bbe388b9c1565ac38cc85daf3eb6a81be5d230ad3444759395456
+    name: kafka-message-scheduler
+    type: application
+    urls:
+    - https://github.com/Segence/helm-chart-repository/releases/download/kafka-message-scheduler-0.1.0/kafka-message-scheduler-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-05-28T11:35:21.818354802Z"
