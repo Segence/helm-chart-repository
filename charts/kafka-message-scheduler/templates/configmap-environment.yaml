@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "kafka-message-scheduler.fullname" . }}-configuration-environment
+  labels:
+    app: {{ template "kafka-message-scheduler.name" . }}
+    chart: {{ template "kafka-message-scheduler.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    {{- with .Values.additionalLabels }}
+{{ toYaml . | indent 4 }}
+    {{- end }}
+data:
+  BOOTSTRAP_SERVERS: "{{ .Values.bootstrapServers }}"
+  GROUP_ID: "{{ .Values.consumerGroup }}"
+  SCHEDULES_TOPICS: "{{ join "," .Values.schedulesTopics }}"
+  HISTORY_TOPIC: "{{ .Values.historyTopic }}"
+  {{- if .Values.configuration }}
+  CONFIGURATION_FILE: "/configuration/kafka-message-scheduler.yaml"
+  {{- end }}
+  {{- with .Values.schedulingInterval }}
+  SCHEDULING_INTERVAL: "{{ . }}"
+  {{- end }}
+  {{- with .Values.scheduleGraceInterval }}
+  SCHEDULE_GRACE_INTERVAL: "{{ . }}"
+  {{- end }}
